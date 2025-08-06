@@ -12,21 +12,15 @@ taxonomies:
 
 menu:
     main:
-        - name: Books
-          url: books/
-          weight: 5 
         - name: Papers
           url: papers/
           weight: 2
-        - name: Courses
-          url: courses/
+        - name: Talks
+          url: talks/
           weight: 3
-        - name: Data
-          url: data/
-          weight: 4 
-        - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-          weight: 6
+        - name: Notes
+          url: notes/
+          weight: 4
 
 params:
     description: "This website hosts Jack Liell-Cock's research papers, and contact information."
@@ -34,7 +28,7 @@ params:
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
-    hideFooter: false
+    hideFooter: true
     disableThemeToggle: true
     ShowShareButtons: false
     ShowReadingTime: false
@@ -44,7 +38,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","papers","data"]
+    MainSections: ["papers","talks","notes"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -53,19 +47,22 @@ params:
     comments: false
     math: true
     profileMode:
-          enabled: true
-          title: Jack Liell-Cock
-          subtitle: "I am a PhD student at the University of Oxford interested in programming langjauge theory. I am primarity interested in using monads and algebra to give semantics of computational effects."
-          imageUrl: "picture.jpeg"
-          imageWidth: 160
-          imageHeight: 160
-          buttons:
-            - name: About
-              url: about/
-            - name: Papers
-              url: papers/
-            - name: Talks
-              url: data/
+        enabled: true
+        title: Jack Liell-Cock
+        subtitle: "Hi! I am a PhD student in Computer Science at the University of Oxford studying programming langauge theory under Sam Staton.
+        I am primarity interested in semantics of computational effects and I work with tools such as universal algebra and monads.
+        I have crossed into areas such as concurrency and probabilistic programming -- see my papers tab for more info.
+        Outside of academia I am a keen traveller, climber, runner, and skier."
+        imageUrl: "picture.jpeg"
+        imageWidth: 160
+        imageHeight: 160
+        buttons:
+          - name: Papers
+            url: papers/
+          - name: Talks
+            url: talks/
+          - name: Notes
+            url: notes/
 
     socialIcons:
         - name: Email
@@ -73,7 +70,7 @@ params:
         - name: ORCID
           url: https://orcid.org/0009-0005-7121-8095
         - name: Google Scholar
-          url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
+          url: https://scholar.google.com/citations?user=PSKAqM4AAAAJ
         - name: GitHub
           url: https://github.com/jacklc3
         - name: Location

@@ -4,15 +4,12 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-list">
                 <div class="post-title">{{ .Title }}</div>
+                <div class="page-description">{{ .Description }}</div>
                 <hr>
-                {{/* Sort by 'year' parameter in descending order */}}
                 {{ range sort .Pages ".Params.year" "desc" }}
                 {{ $page := . }}
-
                 <article class="post-preview">
-
                     <p class="paper-title">{{ .Title }}</p>
-
                     <p class="post-meta">
                         <span style="color: var(--content); font-weight: 500;">
                             {{ $author_count := len .Params.author }}
@@ -32,7 +29,6 @@
                             <strong>DOI:</strong> <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">{{ . }}</a>
                         {{ end }}
                     </p>
-
                     <div class="action-links">
                         {{ with .Resources.GetMatch "*.pdf" }}
                             <a href="{{ .Permalink }}" class="btn-action" target="_blank" rel="noopener">PDF</a>
@@ -50,7 +46,6 @@
                             <a href="#" class="btn-action-tab" data-target="bib-{{ $page.File.UniqueID }}">BibTeX</a>
                         {{ end }}
                     </div>
-
                     <div class="details-container">
                         {{ with .Params.abstract }}
                         <div id="abstract-{{ $page.File.UniqueID }}" class="details-pane">
@@ -59,12 +54,10 @@
                         {{ end }}
                         {{ with .Params.bib }}
                         <div id="bib-{{ $page.File.UniqueID }}" class="details-pane">
-                            {{/* --- REVERTED CHANGE: Using highlight function for stability --- */}}
                             {{ highlight . "bibtex" "" }}
                         </div>
                         {{ end }}
                     </div>
-
                     <hr>
                 </article>
                 {{ end }}

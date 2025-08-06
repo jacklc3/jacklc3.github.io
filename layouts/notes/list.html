@@ -1,0 +1,71 @@
+{{ define "main" }}
+<div class="container" role="main">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-list">
+                <div class="post-title">{{ .Title }}</div>
+                <div class="page-description">
+                    {{ .Description }}
+                </div>
+                <hr>
+                {{ range sort .Pages ".Params.year" "desc" }}
+                {{ $page := . }}
+                <article class="post-preview">
+                    <p class="paper-title">{{ .Title }}</p>
+                    <p class="post-meta">
+                        {{ .Params.description }}
+                        <br>
+                    </p>
+                    <div class="action-links">
+                        {{ with .Resources.GetMatch "*.pdf" }}
+                            <a href="{{ .Permalink }}" class="btn-action" target="_blank" rel="noopener">PDF</a>
+                        {{ end }}
+                    </div>
+                    <hr>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .paper-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    .action-links {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .btn-action, .btn-action-tab {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-right: 15px;
+        padding: 2px 0;
+        border: none;
+        background-color: transparent;
+    }
+    .btn-action:hover, .btn-action-tab:hover {
+        text-decoration: underline;
+        background-color: transparent;
+    }
+    .btn-action-tab {
+        cursor: pointer;
+    }
+    .details-pane {
+        padding: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        background-color: var(--secondary-bg);
+        margin-top: 0.5rem;
+        display: none;
+    }
+</style>
+
+{{ end }}

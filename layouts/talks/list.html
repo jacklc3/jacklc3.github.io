@@ -1,0 +1,74 @@
+{{ define "main" }}
+<div class="container" role="main">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-list">
+                <div class="post-title">{{ .Title }}</div>
+                <div class="page-description">{{ .Description }}</div>
+                <hr>
+                {{ range .Pages.ByDate.Reverse }}
+                <article class="post-preview">
+                    <p class="paper-title">{{ .Title }}</p>
+                    {{ with .Params.presentations }}
+                    {{ range sort . "date" "desc" }}
+                    <div class="presentation-entry">
+                        <p class="venue-info">
+                            <span class="venue-name">{{ .venue }}</span> | <span class="venue-date">{{ (time .date).Format "January 2, 2006" }}</span>
+                        </p>
+                        <div class="action-links">
+                            {{ with .slides }}
+                                <a href="{{ . | absURL }}" class="btn-action" target="_blank" rel="noopener">Slides</a>
+                            {{ end }}
+                            {{ with .video }}
+                                <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Video</a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                {{ end }}
+                <hr>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .page-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    .paper-title {
+        font-size: 1.2rem; 
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .presentation-entry {
+        margin-left: 1rem;
+        padding-bottom: 0.75rem;
+    }
+    .venue-info {
+        margin-bottom: 0.25rem;
+    }
+    .venue-name {
+        font-weight: 500;
+    }
+    .action-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .btn-action {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-right: 15px;
+        padding: 2px 0;
+    }
+    .btn-action:hover {
+        text-decoration: underline;
+    }
+</style>
+{{ end }}
