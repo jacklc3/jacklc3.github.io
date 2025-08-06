@@ -73,8 +73,6 @@ params:
           url: https://scholar.google.com/citations?user=PSKAqM4AAAAJ
         - name: GitHub
           url: https://github.com/jacklc3
-        - name: Location
-          url: location/
 
     assets:
         disableScrollBarStyle: true
