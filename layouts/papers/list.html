@@ -1,0 +1,158 @@
+{{ define "main" }}
+<div class="container" role="main">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-list">
+                <div class="post-title">{{ .Title }}</div>
+                <hr>
+                {{/* Sort by 'year' parameter in descending order */}}
+                {{ range sort .Pages ".Params.year" "desc" }}
+                {{ $page := . }}
+
+                <article class="post-preview">
+
+                    <p class="paper-title">{{ .Title }}</p>
+
+                    <p class="post-meta">
+                        <span style="color: var(--content); font-weight: 500;">
+                            {{ $author_count := len .Params.author }}
+                            {{ range $index, $auth := .Params.author }}
+                                {{- if eq $auth "Jack Liell-Cock" -}}
+                                    <strong>{{- $auth -}}</strong>
+                                {{- else -}}
+                                    {{- $auth -}}
+                                {{- end -}}
+                                {{- if lt (add $index 1) $author_count -}}, {{ end }}
+                            {{ end }}
+                        </span>
+                        <br>
+                        {{ .Params.publication }} | {{ .Params.year }}
+                        <br>
+                        {{ with .Params.doi }}
+                            <strong>DOI:</strong> <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">{{ . }}</a>
+                        {{ end }}
+                    </p>
+
+                    <div class="action-links">
+                        {{ with .Resources.GetMatch "*.pdf" }}
+                            <a href="{{ .Permalink }}" class="btn-action" target="_blank" rel="noopener">PDF</a>
+                        {{ end }}
+                        {{ with .Params.talk }}
+                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Talk</a>
+                        {{ end }}
+                        {{ with .Params.arxiv }}
+                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">ArXiv</a>
+                        {{ end }}
+                        {{ with .Params.abstract }}
+                            <a href="#" class="btn-action-tab" data-target="abstract-{{ $page.File.UniqueID }}">Abstract</a>
+                        {{ end }}
+                        {{ with .Params.bib }}
+                            <a href="#" class="btn-action-tab" data-target="bib-{{ $page.File.UniqueID }}">BibTeX</a>
+                        {{ end }}
+                    </div>
+
+                    <div class="details-container">
+                        {{ with .Params.abstract }}
+                        <div id="abstract-{{ $page.File.UniqueID }}" class="details-pane">
+                            <p class="preserve-whitespace">{{ . }}</p>
+                        </div>
+                        {{ end }}
+                        {{ with .Params.bib }}
+                        <div id="bib-{{ $page.File.UniqueID }}" class="details-pane">
+                            {{/* --- REVERTED CHANGE: Using highlight function for stability --- */}}
+                            {{ highlight . "bibtex" "" }}
+                        </div>
+                        {{ end }}
+                    </div>
+
+                    <hr>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .paper-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    .action-links {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .btn-action, .btn-action-tab {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-right: 15px;
+        padding: 2px 0;
+        border: none;
+        background-color: transparent;
+    }
+    .btn-action:hover, .btn-action-tab:hover {
+        text-decoration: underline;
+        background-color: transparent;
+    }
+    .btn-action-tab {
+        cursor: pointer;
+    }
+    .details-pane {
+        padding: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        background-color: var(--secondary-bg);
+        margin-top: 0.5rem;
+        display: none;
+    }
+    .details-pane .preserve-whitespace {
+        font-size: 0.8rem;
+        white-space: pre-wrap;
+        margin-bottom: 0;
+    }
+    /* Style the highlighted block to control its size */
+    .details-pane div.highlight > pre {
+        font-size: 0.8rem;
+        background: transparent !important;
+        padding: 0;
+        margin: 0;
+        white-space: pre-wrap !important;
+        word-break: break-all;
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const allTabButtons = document.querySelectorAll('.btn-action-tab');
+
+    allTabButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const targetPane = document.getElementById(targetId);
+
+            if (!targetPane) return;
+
+            const parentArticle = this.closest('article.post-preview');
+            const detailPanesInArticle = parentArticle.querySelectorAll('.details-pane');
+
+            const isCurrentlyVisible = targetPane.style.display === 'block';
+
+            detailPanesInArticle.forEach(pane => {
+                pane.style.display = 'none';
+            });
+
+            if (!isCurrentlyVisible) {
+                targetPane.style.display = 'block';
+            }
+        });
+    });
+});
+</script>
+
+{{ end }}
