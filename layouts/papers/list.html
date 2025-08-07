@@ -30,8 +30,11 @@
                         {{ end }}
                     </p>
                     <div class="action-links">
-                        {{ with .Resources.GetMatch "*.pdf" }}
-                            <a href="{{ .Permalink }}" class="btn-action" target="_blank" rel="noopener">PDF</a>
+                        {{ with .Params.pdf }}
+                            {{ $pdf_resource := $page.Resources.GetMatch . }}
+                            {{ if $pdf_resource }}
+                                <a href="{{ $pdf_resource.Permalink }}" class="btn-action" target="_blank" rel="noopener">PDF</a>
+                            {{ end }}
                         {{ end }}
                         {{ with .Params.talk }}
                             <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Talk</a>

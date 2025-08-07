@@ -7,6 +7,7 @@
                 <div class="page-description">{{ .Description }}</div>
                 <hr>
                 {{ range .Pages.ByDate.Reverse }}
+                {{ $page := . }}
                 <article class="post-preview">
                     <p class="paper-title">{{ .Title }}</p>
                     {{ with .Params.presentations }}
@@ -17,7 +18,10 @@
                         </p>
                         <div class="action-links">
                             {{ with .slides }}
-                                <a href="{{ . | absURL }}" class="btn-action" target="_blank" rel="noopener">Slides</a>
+                                {{ $pdf_resource := $page.Resources.GetMatch . }}
+                                {{ if $pdf_resource }}
+                                    <a href="{{ $pdf_resource.Permalink }}" class="btn-action" target="_blank" rel="noopener">Slides</a>
+                                {{ end }}
                             {{ end }}
                             {{ with .video }}
                                 <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Video</a>
