@@ -50,8 +50,8 @@ params:
         enabled: true
         title: Jack Liell-Cock
         subtitle: "Hi! I am a PhD student in Computer Science at the University of Oxford, where I study programming language theory.
-          I am primarily interested in the semantics of computational effects, and I work with tools such as universal algebra and monads.
-          I have crossed into areas such as concurrency and probabilistic programming -- see my papers tab for more information.
+          I am primarily interested in the semantics of computational effects, where I work with tools such as universal algebra and monads.
+          I have crossed into areas such as concurrency and probabilistic programming.
           Outside of academia, I am a keen traveller, climber, runner, and skier."
         imageUrl: "picture.jpeg"
         imageWidth: 160
