@@ -22,7 +22,7 @@
                             {{ end }}
                         </span>
                         <br>
-                        {{ .Params.publication }} | {{ .Params.year }}
+                        <span style="font-weight:500;">{{ .Params.publication }}</span> | {{ .Params.year }}
                         <br>
                         {{ with .Params.doi }}
                             <strong>DOI:</strong> <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">{{ . }}</a>

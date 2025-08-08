@@ -10,11 +10,12 @@
                 <article class="post-preview">
                     <p class="paper-title">{{ .Title }}</p>
                     {{ with .Params.presentations }}
+                    <ul class="talk-list">
                     {{ range sort . "date" "desc" }}
-                    <div class="presentation-entry">
-                        <p class="venue-info">
+                    <li>
+                        <span class="venue-info">
                             <span class="venue-name">{{ .venue }}</span> | <span class="venue-date">{{ (time .date).Format "January 2, 2006" }}</span>
-                        </p>
+                        </span>
                         <div class="action-links">
                             {{ with .slides }}
                                 {{ $pdf_resource := $page.Resources.GetMatch . }}
@@ -26,8 +27,9 @@
                                 <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Video</a>
                             {{ end }}
                         </div>
-                    </div>
+                    </li>
                     {{ end }}
+                    </ul>
                 {{ end }}
                 <hr>
                 </article>
@@ -41,22 +43,24 @@
     .paper-title {
         font-size: 1.2rem;
         font-weight: 600;
-        margin-bottom: 1rem;
+        padding-bottom: 0.25rem;
     }
-    .presentation-entry {
-        margin-left: 1rem;
-        padding-bottom: 0.75rem;
+    .talk-list {
+        list-style-position: inside;
+    }
+    .talk-list li {
+        margin-bottom: 0.25rem;
+        margin-left: 0.25rem;
     }
     .venue-info {
-        margin-bottom: 0.25rem;
+        font-size: 15px;
     }
     .venue-name {
         font-weight: 500;
     }
     .action-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
+        display: block;
+        margin-left: 1.4em;
     }
     .btn-action {
         color: var(--primary);
