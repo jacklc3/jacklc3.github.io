@@ -17,6 +17,9 @@
                         {{ with .Resources.GetMatch "*.pdf" }}
                             <a href="{{ .Permalink }}" class="btn-action" target="_blank" rel="noopener">PDF</a>
                         {{ end }}
+                        {{ with .Params.code }}
+                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Code</a>
+                        {{ end }}
                     </div>
                     <hr>
                 </article>
