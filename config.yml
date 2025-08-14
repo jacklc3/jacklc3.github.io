@@ -28,7 +28,7 @@ params:
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
-    hideFooter: false
+    hideFooter: true
     disableThemeToggle: true
     ShowShareButtons: false
     ShowReadingTime: false
@@ -49,10 +49,15 @@ params:
     profileMode:
         enabled: true
         title: Jack Liell-Cock
-        subtitle: "Hi! I am a PhD student in Computer Science at the University of Oxford, where I study programming language theory.
+        subtitle: |
+          Hi! I am a PhD student in Computer Science at the University of Oxford, where I study programming language theory.
           I am primarily interested in the semantics of computational effects, where I work with tools such as universal algebra and monads.
           I have crossed into areas such as concurrency and probabilistic programming.
-          Outside of academia, I am a keen traveller, climber, runner, and skier."
+          Outside of academia, I am a keen traveller, climber, runner, and skier.
+          <br><br>
+          **Email:** jack (dot) liell-cock (at) cs.ox.ac.uk
+          <br>
+          **Address:** Wolfson Building, Parks Road, Oxford OX1 3QD
         imageUrl: "picture.jpeg"
         imageWidth: 160
         imageHeight: 160
@@ -65,8 +70,8 @@ params:
             url: notes/
 
     socialIcons:
-        - name: Email
-          url: mailto:jack.liell-cock@cs.ox.ac.uk
+        #- name: Email
+        #  url: mailto:jack.liell-cock@cs.ox.ac.uk
         - name: ORCID
           url: https://orcid.org/0009-0005-7121-8095
         - name: Google Scholar
