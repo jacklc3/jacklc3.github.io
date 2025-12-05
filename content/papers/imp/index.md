@@ -12,7 +12,7 @@ bib: "@inproceedings{LiellCock2025,
   author = {Jack Liell-Cock and Sam Staton},
   title = {Compositional Imprecise Probability},
   year = {2025},
-  booktitle = {Proc.~POPL 2025},
+  booktitle = {Proc. POPL~2025},
   doi = {10.1145/3704890}
 }"
 
