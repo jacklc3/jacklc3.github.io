@@ -2,7 +2,7 @@
 title: "An Equational Axiomatization of Dynamic Threads via Algebraic Effects"
 year: 2026
 author: ["Ohad Kammar", "Jack Liell-Cock", "Cristina Matache", "Sam Lindley", "Sam Staton"]
-publication: "53rd Symposium on Principles of Programming Languages"
+publication: "53rd Symposium on Principles of Programming Languages (Distinguished paper)"
 doi: "10.1145/3776706"
 abstract: "We use the theory of algebraic effects to give a complete equational axiomatization for dynamic threads. Our method is based on parameterized algebraic theories, which give a concrete syntax for strong monads on functor categories, and are a convenient framework for names and binding.
 
@@ -11,7 +11,7 @@ Our programs are built from the key primitives `fork' and `wait'. `Fork' creates
 Our equational axiomatization is complete in two senses. First, for closed expressions, it completely captures equality of labelled posets (pomsets), an established model of concurrency: model complete. Second, any two open expressions are provably equal if they are equal under all closing substitutions: syntactically complete.
 
 The benefit of algebraic effects is that the semantic analysis can focus on the algebraic operations of fork and wait. We then extend the analysis to a simple concurrent programming language by giving operational and denotational semantics. The denotational semantics is built using the methods of parameterized algebraic theories and we show that it is sound, adequate, and fully abstract at first order for labelled-poset observations."
-pdf: "popl-26.pdf"
+pdf: "paper.pdf"
 bib: "@inproceedings{Kammar2026,
   author = {Kammar, Ohad and Liell-Cock, Jack and Lindley, Sam and Matache, Cristina and Staton, Sam},
   title = {An equational axiomatization of dynamic threads via algebraic effects},
