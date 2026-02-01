@@ -4,6 +4,7 @@ year: 2026
 author: ["Ohad Kammar", "Jack Liell-Cock", "Cristina Matache", "Sam Lindley", "Sam Staton"]
 publication: "53rd Symposium on Principles of Programming Languages (Distinguished paper)"
 doi: "10.1145/3776706"
+talk: "https://www.youtube.com/watch?v=dyZeEuJcyWw"
 abstract: "We use the theory of algebraic effects to give a complete equational axiomatization for dynamic threads. Our method is based on parameterized algebraic theories, which give a concrete syntax for strong monads on functor categories, and are a convenient framework for names and binding.
 
 Our programs are built from the key primitives `fork' and `wait'. `Fork' creates a child thread and passes its name (thread ID) to the parent thread. `Wait' allows us to wait for given child threads to finish. We provide a parameterized algebraic theory built from fork and wait, together with basic atomic actions and laws such as associativity of `fork'.
