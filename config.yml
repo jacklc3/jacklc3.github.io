@@ -21,6 +21,9 @@ menu:
         - name: Notes
           url: notes/
           weight: 4
+        - name: CV
+          url: cv.pdf
+          weight: 5
 
 params:
     description: "This website hosts Jack Liell-Cock's research papers, and contact information."
@@ -68,6 +71,8 @@ params:
             url: talks/
           - name: Notes
             url: notes/
+          - name: CV
+            url: cv.pdf
 
     socialIcons:
         #- name: Email

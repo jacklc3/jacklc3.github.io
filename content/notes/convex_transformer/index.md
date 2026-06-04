@@ -4,5 +4,6 @@ description: "A short note on the beginnings of a generalisation of the convex p
     I would like to further generalise beyond Set to accommodate extra structure in imprecise probabilities.
     I think this is related to the distributive laws note, but I have not fleshed out the connection yet."
 date: 2025-04-01
+pdf: "convex-transformer.pdf"
 
 ---
