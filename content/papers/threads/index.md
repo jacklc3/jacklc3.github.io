@@ -1,6 +1,6 @@
 ---
 title: "An Equational Axiomatization of Dynamic Threads via Algebraic Effects (Distinguished Paper)"
-year: 2026
+date: 2026-01-20
 author: ["Ohad Kammar", "Jack Liell-Cock", "Cristina Matache", "Sam Lindley", "Sam Staton"]
 publication: "53rd Symposium on Principles of Programming Languages"
 doi: "10.1145/3776706"

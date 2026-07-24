@@ -1,6 +1,6 @@
 ---
 title: "Preserving Privacy of the Influence Structure in Friedkin Johnsen Systems"
-year: 2020
+date: 2020-12-14
 author: ["Jack Liell-Cock", "Ian Manchester", "Guodong Shi"]
 publication: "59th IEEE Conference on Decision and Control"
 doi: "10.1109/CDC42340.2020.9304100"

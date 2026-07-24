@@ -1,6 +1,6 @@
 ---
 title: "The Relative Monadic Metalanguage"
-year: 2026
+date: 2026-01-20
 author: ["Jack Liell-Cock", "Zev Shirazi", "Sam Staton"]
 publication: "53rd Symposium on Principles of Programming Languages"
 doi: "10.1145/3776702"

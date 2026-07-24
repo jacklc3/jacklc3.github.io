@@ -5,7 +5,7 @@
             <div class="posts-list">
                 <div class="post-title">{{ .Title }}</div>
                 <hr>
-                {{ range sort .Pages ".Params.year" "desc" }}
+                {{ range .Pages.ByDate.Reverse }}
                 {{ $page := . }}
                 <article class="post-preview">
                     <p class="paper-title">{{ .Title }}</p>
@@ -22,7 +22,7 @@
                             {{ end }}
                         </span>
                         <br>
-                        <span style="font-weight:500;">{{ .Params.publication }}</span> | {{ .Params.year }}
+                        <span style="font-weight:500;">{{ .Params.publication }}</span> | {{ .Date.Format "2006" }}
                         <br>
                         {{ with .Params.doi }}
                             <strong>DOI:</strong> <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">{{ . }}</a>

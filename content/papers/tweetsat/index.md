@@ -1,6 +1,6 @@
 ---
 title: "TweetS@: A 3D Printed Tweeting CubeSat with a Neural Network Sun Sensor"
-year: 2019
+date: 2019-09-30
 author: ["Yiwei Mao", "Jack Liell-Cock", "Sholto Douglas", "Stephen Huang", "Qian Cheng", "Ryan Jeffreson", "Jamie De Piero", "Shaka Chu", "Tom McCredie", "Muddasir Tahir"]
 publication: "19th Australian Space Research Conference"
 pdf: "paper.pdf"

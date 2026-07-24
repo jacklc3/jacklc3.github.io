@@ -1,6 +1,6 @@
 ---
 title: "Let a Thousand Flowers Bloom: An Algebraic Representation for Edge Graphs"
-year: 2024
+date: 2024-02-01
 author: ["Jack Liell-Cock", "Tom Schrijvers"]
 publication: "The Art, Science, and Engineering of Programming"
 doi: "10.22152/programming-journal.org/2024/8/9"

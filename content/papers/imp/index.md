@@ -1,6 +1,6 @@
 ---
 title: "Compositional Imprecise Probability"
-year: 2025
+date: 2025-01-19
 author: ["Jack Liell-Cock", "Sam Staton"]
 publication: "52nd Symposium on Principles of Programming Languages"
 doi: "10.1145/3704890"
