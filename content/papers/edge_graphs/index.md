@@ -5,6 +5,8 @@ author: ["Jack Liell-Cock", "Tom Schrijvers"]
 publication: "The Art, Science, and Engineering of Programming"
 doi: "10.22152/programming-journal.org/2024/8/9"
 pdf: "paper.pdf"
+code: "https://github.com/jacklc3/algebraic-edge-graphs"
+package: "https://hackage.haskell.org/package/algebraic-edge-graphs"
 arxiv: "https://arxiv.org/abs/2403.02273"
 abstract: "Context: Edge graphs are graphs whose edges are labelled with identifiers, and nodes can have multiple edges between them. They are used to model a wide range of systems, including networks with distances or degrees of connection and complex relational data.
 

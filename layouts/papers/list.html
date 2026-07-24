@@ -38,6 +38,12 @@
                         {{ with .Params.talk }}
                             <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Talk</a>
                         {{ end }}
+                        {{ with .Params.code }}
+                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Code</a>
+                        {{ end }}
+                        {{ with .Params.package }}
+                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Package</a>
+                        {{ end }}
                         {{ with .Params.arxiv }}
                             <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">ArXiv</a>
                         {{ end }}
