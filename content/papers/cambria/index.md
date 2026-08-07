@@ -8,6 +8,7 @@ abstract: "The algebraic effects and handlers paradigm separates the concerns of
 We prove parametricity via a step-indexed logical relation, formalizing the abstraction guarantee provided by parametrized handlers. We also establish type safety and classify the annotations needed for completeness of the type inference algorithm. We demonstrate Cambria's practicality with a working implementation and provide examples including local state, Polya's urn, and concurrent thread management. The last is a parametrized effect whose abstract thread IDs are shared between concurrent computations, going beyond standard instances. Cambria is the first calculus with user-defined resource-allocating effects that guarantees, via parametricity, that client code cannot depend on how a handler represents its resources."
 pdf: "paper.pdf"
 code: "https://github.com/jacklc3/cambria"
+playground: "https://cambria-lang.org/"
 bib: "@misc{LiellCock2026,
   author = {Liell-Cock, Jack and Staton, Sam},
   title = {Cambria: Resource Abstraction for Parametrized Algebraic Effects and Handlers},

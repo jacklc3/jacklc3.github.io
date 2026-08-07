@@ -44,6 +44,9 @@
                         {{ with .Params.package }}
                             <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Package</a>
                         {{ end }}
+                        {{ with .Params.playground }}
+                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Playground</a>
+                        {{ end }}
                         {{ with .Params.arxiv }}
                             <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">ArXiv</a>
                         {{ end }}
