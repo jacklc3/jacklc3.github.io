@@ -2,7 +2,7 @@
 title: "The Relative Monadic Metalanguage"
 date: 2026-01-20
 author: ["Jack Liell-Cock", "Zev Shirazi", "Sam Staton"]
-publication: "53rd Symposium on Principles of Programming Languages"
+publication: "ACM Symposium on Principles of Programming Languages (POPL)"
 doi: "10.1145/3776702"
 talk : "https://www.youtube.com/watch?v=WxkERJ_7yLI"
 abstract: "Relative monads provide a controlled view of computation. We generalise the monadic metalanguage to a relative setting and give a complete semantics with strong relative monads. Adopting this perspective, we generalise two existing program calculi from the literature. We provide a linear-non-linear language for graded monads, LNL-RMM, along with a semantic proof that it is a conservative extension of the graded monadic metalanguage. Additionally, we provide a complete semantics for the arrow calculus, showing it is a restricted relative monadic metalanguage. This motivates the introduction of ARMM, a computational lambda calculus-style language for arrows that conservatively extends the arrow calculus."

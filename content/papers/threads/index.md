@@ -2,7 +2,7 @@
 title: "An Equational Axiomatization of Dynamic Threads via Algebraic Effects (Distinguished Paper)"
 date: 2026-01-21
 author: ["Ohad Kammar", "Jack Liell-Cock", "Cristina Matache", "Sam Lindley", "Sam Staton"]
-publication: "53rd Symposium on Principles of Programming Languages"
+publication: "ACM Symposium on Principles of Programming Languages (POPL)"
 doi: "10.1145/3776706"
 talk: "https://www.youtube.com/watch?v=dyZeEuJcyWw"
 abstract: "We use the theory of algebraic effects to give a complete equational axiomatization for dynamic threads. Our method is based on parameterized algebraic theories, which give a concrete syntax for strong monads on functor categories, and are a convenient framework for names and binding.

@@ -2,7 +2,7 @@
 title: "Compositional Imprecise Probability"
 date: 2025-01-19
 author: ["Jack Liell-Cock", "Sam Staton"]
-publication: "52nd Symposium on Principles of Programming Languages"
+publication: "ACM Symposium on Principles of Programming Languages (POPL)"
 doi: "10.1145/3704890"
 talk: "https://www.youtube.com/watch?v=ZjwLBLW7JdA"
 arxiv: "https://arxiv.org/abs/2405.09391"
