@@ -1,5 +1,6 @@
 ---
-title: "An Equational Axiomatization of Dynamic Threads via Algebraic Effects (Distinguished Paper)"
+title: "An Equational Axiomatization of Dynamic Threads via Algebraic Effects"
+award: "Distinguished Paper"
 date: 2026-01-21
 author: ["Ohad Kammar", "Jack Liell-Cock", "Cristina Matache", "Sam Lindley", "Sam Staton"]
 publication: "ACM Symposium on Principles of Programming Languages (POPL)"

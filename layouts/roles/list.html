@@ -1,0 +1,58 @@
+{{ define "main" }}
+<div class="container" role="main">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-list">
+                <div class="post-title">{{ .Title }}</div>
+                <hr>
+                {{ range .Pages.ByDate.Reverse }}
+                <article class="post-preview">
+                    <p class="paper-title">{{ .Title }}</p>
+                    <p class="post-meta">
+                        <span style="color: var(--content); font-weight: 500;">{{ .Params.role }}</span>
+                        <br>
+                        <span style="font-weight:500;">{{ .Params.org }}</span>{{ with .Params.location }}, {{ . }}{{ end }} | {{ if .Params.period }}{{ .Params.period }}{{ else }}{{ .Date.Format "January 2006" }}{{ end }}
+                        {{ with .Params.detail }}<br>{{ . }}{{ end }}
+                    </p>
+                    {{ with .Params.website }}
+                    <div class="action-links">
+                        <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Website</a>
+                    </div>
+                    {{ end }}
+                    <hr>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .paper-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    .action-links {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .btn-action {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-right: 15px;
+        padding: 2px 0;
+        border: none;
+        background-color: transparent;
+    }
+    .btn-action:hover {
+        text-decoration: underline;
+        background-color: transparent;
+    }
+</style>
+
+{{ end }}

@@ -22,7 +22,7 @@
                             {{ end }}
                         </span>
                         <br>
-                        <span style="font-weight:500;">{{ .Params.publication }}</span> | {{ .Date.Format "2006" }}
+                        <span style="font-weight:500;">{{ .Params.publication }}</span> | {{ .Date.Format "2006" }}{{ with .Params.award }}<span class="award-badge">{{ . }}</span>{{ end }}
                         <br>
                         {{ with .Params.doi }}
                             <strong>DOI:</strong> <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">{{ . }}</a>
@@ -38,14 +38,14 @@
                         {{ with .Params.talk }}
                             <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Talk</a>
                         {{ end }}
-                        {{ with .Params.code }}
-                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Code</a>
+                        {{ with .Params.playground }}
+                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Playground</a>
                         {{ end }}
                         {{ with .Params.package }}
                             <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Package</a>
                         {{ end }}
-                        {{ with .Params.playground }}
-                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Playground</a>
+                        {{ with .Params.code }}
+                            <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">Code</a>
                         {{ end }}
                         {{ with .Params.arxiv }}
                             <a href="{{ . }}" class="btn-action" target="_blank" rel="noopener">ArXiv</a>
@@ -82,6 +82,21 @@
         font-size: 1.15rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
+    }
+    .award-badge {
+        display: inline-block;
+        margin-left: 8px;
+        padding: 1px 7px;
+        border: 1px solid var(--tertiary);
+        border-radius: 4px;
+        background-color: var(--code-bg);
+        color: var(--primary);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        line-height: 1.5;
+        vertical-align: 1px;
+        white-space: nowrap;
     }
     .action-links {
         margin-bottom: 1rem;
