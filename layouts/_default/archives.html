@@ -8,7 +8,7 @@
 {{- $pages = site.RegularPages }}
 {{- end }}
 
-{{- range $pages.GroupByPublishDate "2006" }}
+{{- range $pages.GroupByDate "2006" }}
 {{- if ne .Key "0001" }}
 <div class="archive-year">
   {{- $year := replace .Key "0001" "" }}
@@ -16,6 +16,7 @@
     <a class="archive-header-link" href="#{{ $year }}">
       {{- $year -}}
     </a>
+  </h2>
   {{- range .Pages.GroupByDate "January" }}
   <div class="archive-month">
     <h3 class="archive-month-header" id="{{ $year }}-{{ .Key }}">
