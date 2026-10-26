@@ -7,6 +7,7 @@ presentations:
     slides: "slides-acv.pdf"
   - venue: "ICFP 2026"
     date: 2026-08-25
+    video: "https://www.youtube.com/watch?v=y6Gwr33DaCg"
     slides: "slides-icfp.pdf"
 
 ---
